@@ -1,12 +1,13 @@
 import Data.Either
 import Data.Char
 
---partitionEithers'' :: [Either a b] -> ([a],[b])
---partitionEithers'' [] = ([], [])
---partitionEithers'' (h:t) 
---    case h of 
---    	(Left a) -> ([]++a,b):partitionEithers'' (t)
---    	(Right b) -> (a,[]++b):partitionEithers'' (t)
+partitionEithers'' :: [Either a b] -> ([a],[b])
+partitionEithers'' [] = ([], [])
+partitionEithers'' (h:t) 
+    case h of 
+    	(Left a) -> (a:x,y)
+       (Right b) -> (a,b:y)
+       where (x,y) = partitionEithers'' (t)
 
 constroiMSet :: [(a,Int)] -> [a]
 constroiMSet [] = []
