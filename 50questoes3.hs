@@ -177,7 +177,7 @@ intersectelm' a (h:t)
     |a == h = True
     |otherwise = intersectelm' a (t)
 
---25--perguntar se é recursiva
+--25--é recursiva?
 insert' :: Ord a => a -> [a]-> [a]
 insert' a [] = [a]
 insert' a [c]
@@ -289,6 +289,7 @@ converteMSet' [] = []
 converteMSet' ((a,b):t)
     |b/=0 = a:converteMSet' ((a,(b-1)):t)
     |otherwise = converteMSet' (t)
+    
 --39
 insereMSet' :: Eq a => a -> [(a,Int)] -> [(a,Int)]
 insereMSet' a [] = [(a,1)]
